@@ -1,0 +1,10 @@
+<h1>Add new book</h1>
+
+<%= form_for @book, url:{ action: "create"} do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+    <%= f.collection_select :subject_id, @subjects, :id, :name %>
+    <%= f.submit "Create" %>
+<% end %>
